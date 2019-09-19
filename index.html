@@ -1,12 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Olá mundo</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./vendor/bootstrap.min.css">
+    <script src="./vendor/jquery.min.js"></script>
+    <script src="./vendor/bootstrap.min.js"></script>
 </head>
+
 <body>
-    
+    <ul class="nav justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item active">
+            <a class="nav-link" id="dp_cesar_tab" href="#dp_cesar" data-toggle="tab" role="tab" aria-controls="dp_cesar"
+                aria-selected="true">DP de Cesar</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="permutacao_tab" href="#permutacao" data-toggle="tab" role="tab"
+                aria-controls="dp_cesar" aria-selected="false">Permutação</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="permutacao_reversa_tab" href="#permutacao_reversa" data-toggle="tab" role="tab"
+                aria-controls="dp_cesar" aria-selected="false">Permutação Reversa</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="transposicao_tab" href="#trasposicao" data-toggle="tab" role="tab"
+                aria-controls="transposicao" aria-selected="false">Transposição</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="hash_tab" href="#hash" data-toggle="tab" role="tab" aria-controls="hash"
+                aria-selected="false">Hash</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="congruencia_tab" href="#congruencia" data-toggle="tab" role="tab"
+                aria-controls="congruencia_tab" aria-selected="false">Congruência</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="dp_cesar" role="tabpanel" aria-labelledby="dp_cesar_tab">
+            Criptografar:
+            <div class="form-group">
+                <label for="dp_cesar_critografar">Texto Original</label>
+                <input type="text" class="form-control" id="dp_cesar_critografar">
+            </div>
+            <button class="btn btn-primary">EXECUTAR</button>
+            <br><br>
+            Descriptografar:
+            <div class="form-group">
+                <label for="dp_cesar_descritografar">Texto Criptografado</label>
+                <input type="email" class="form-control" id="dp_cesar_descritografar">
+            </div>
+            <button class="btn btn-primary">EXECUTAR</button>
+        </div>
+        <div class="tab-pane fade show" id="permutacao" role="tabpanel" aria-labelledby="permutacao_tab">
+            Criptografar:
+            <div class="form-group">
+                <label for="permutacao_critografar">Texto Original</label>
+                <input type="text" class="form-control" id="permutacao_critografar">
+            </div>
+            <div class="form-group">
+                <label for="p">P</label>
+                <input type="text" class="form-control" id="p">
+            </div>
+            <button class="btn btn-primary">EXECUTAR</button>
+            <br><br>
+            Descriptografar:
+            <div class="form-group">
+                <label for="permutacao_descritografar">Texto Criptografado</label>
+                <input type="email" class="form-control" id="permutacao_descritografar">
+            </div>
+            <div class="form-group">
+                <label for="p_menos_um">P - 1</label>
+                <input type="text" class="form-control" id="p_menos_um">
+            </div>
+            <button class="btn btn-primary">EXECUTAR</button>
+        </div>
+        <div class="tab-pane fade show" id="permutacao_reversa" role="tabpanel" aria-labelledby="permutacao_reversa_tab">
+                Inverter Permutação:
+                <div class="form-group">
+                    <label for="permutacao_critografar">P Original</label>
+                    <input type="text" class="form-control" id="permutacao_critografar">
+                </div>
+                <button class="btn btn-primary">EXECUTAR</button>
+        </div>
+        <div class="tab-pane fade show" id="trasposicao" role="tabpanel" aria-labelledby="trasposicao_tab">
+                Criptografar:
+                <div class="form-group">
+                    <label for="trasposicao_critografar">Texto Original</label>
+                    <input type="text" class="form-control" id="trasposicao_critografar">
+                </div>
+                <button class="btn btn-primary">EXECUTAR</button>
+                <br><br>
+                Descriptografar:
+                <div class="form-group">
+                    <label for="trasposicao_descriptografar">Texto Criptografado</label>
+                    <input type="text" class="form-control" id="trasposicao_descriptografar">
+                </div>
+                <button class="btn btn-primary">EXECUTAR</button>
+        </div>
+        <div class="tab-pane fade show" id="hash" role="tabpanel" aria-labelledby="hash_tab">
+                Criptografar:
+                <div class="form-group">
+                    <label for="hash_critografar">Texto Original</label>
+                    <input type="text" class="form-control" id="hash_critografar">
+                </div>
+                <button class="btn btn-primary">EXECUTAR</button>
+                <br><br>
+                Descriptografar:
+                <div class="form-group">
+                    <label for="hash_descriptografar">Texto Criptografado</label>
+                    <input type="text" class="form-control" id="hash_descriptografar">
+                </div>
+                <button class="btn btn-primary">EXECUTAR</button>
+        </div>
+        <div class="tab-pane fade show" id="congruencia" role="tabpanel" aria-labelledby="congruencia_tab">
+                Criptografar:
+                <div class="form-group">
+                    <label for="congruencia_critografar">Texto Original</label>
+                    <input type="text" class="form-control" id="congruencia_critografar">
+                </div>
+                <button class="btn btn-primary">EXECUTAR</button>
+                <br><br>
+                Descriptografar:
+                <div class="form-group">
+                    <label for="congruencia_descriptografar">Texto Criptografado</label>
+                    <input type="text" class="form-control" id="congruencia_descriptografar">
+                </div>
+                <button class="btn btn-primary">EXECUTAR</button>
+        </div>
+    </div>
+    <!-- <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form> -->
 </body>
+
 </html>

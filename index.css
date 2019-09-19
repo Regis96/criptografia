@@ -1,0 +1,9 @@
+body{
+    padding-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+li.active a{
+    border: black 0.2px solid;
+}
