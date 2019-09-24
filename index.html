@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./vendor/bootstrap.min.css">
     <script src="./vendor/jquery.min.js"></script>
     <script src="./vendor/bootstrap.min.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -48,14 +49,16 @@
                 <label for="dp_cesar_critografar">Texto Original</label>
                 <input type="text" class="form-control" id="dp_cesar_critografar">
             </div>
-            <button class="btn btn-primary">EXECUTAR</button>
+            <button class="btn btn-primary" onclick="dpcIndo($('#dp_cesar_critografar').val(), 'result_cesar')">EXECUTAR</button>
+            <span id="result_cesar"></span>
             <br><br>
             Descriptografar:
             <div class="form-group">
                 <label for="dp_cesar_descritografar">Texto Criptografado</label>
                 <input type="email" class="form-control" id="dp_cesar_descritografar">
             </div>
-            <button class="btn btn-primary">EXECUTAR</button>
+            <button class="btn btn-primary" onclick="dpcVoltando($('#dp_cesar_descritografar').val(), 'result_cesar_reverso')">EXECUTAR</button>
+            <span id="result_cesar_reverso"></span>
         </div>
         <div class="tab-pane fade show" id="permutacao" role="tabpanel" aria-labelledby="permutacao_tab">
             Criptografar:
