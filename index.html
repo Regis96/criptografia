@@ -21,12 +21,12 @@
                 aria-selected="true">DP de Cesar</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="permutacao_tab" href="#permutacao" data-toggle="tab" role="tab"
-                aria-controls="dp_cesar" aria-selected="false">Permutação</a>
+            <a class="nav-link" id="permutacao_reversa_tab" href="#permutacao_reversa" data-toggle="tab" role="tab"
+                aria-controls="dp_cesar" aria-selected="false">P - 1</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="permutacao_reversa_tab" href="#permutacao_reversa" data-toggle="tab" role="tab"
-                aria-controls="dp_cesar" aria-selected="false">Permutação Reversa</a>
+            <a class="nav-link" id="permutacao_tab" href="#permutacao" data-toggle="tab" role="tab"
+                aria-controls="dp_cesar" aria-selected="false">Permutação</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="transposicao_tab" href="#trasposicao" data-toggle="tab" role="tab"
@@ -60,36 +60,27 @@
             <button class="btn btn-primary" onclick="dpcVoltando($('#dp_cesar_descritografar').val(), 'result_cesar_reverso')">EXECUTAR</button>
             <span id="result_cesar_reverso"></span>
         </div>
+        <div class="tab-pane fade show" id="permutacao_reversa" role="tabpanel" aria-labelledby="permutacao_reversa_tab">
+                Inverter Chave:
+                <div class="form-group">
+                    <label for="permutacao_critografar">P Original(separar números por espaço)</label>
+                    <input type="text" class="form-control" id="permutacao_critografar_p">
+                </div>
+                <button class="btn btn-primary" onclick="inverterChavePermutacao($('#permutacao_critografar_p').val(), 'result_inverter_chave_permutacao')">EXECUTAR</button>
+                <span id="result_inverter_chave_permutacao"></span>
+        </div>
         <div class="tab-pane fade show" id="permutacao" role="tabpanel" aria-labelledby="permutacao_tab">
-            Criptografar:
+            Aplicar Permutação:
             <div class="form-group">
                 <label for="permutacao_critografar">Texto Original</label>
                 <input type="text" class="form-control" id="permutacao_critografar">
             </div>
             <div class="form-group">
-                <label for="p">P</label>
+                <label for="p">P(separar números por espaço)</label>
                 <input type="text" class="form-control" id="p">
             </div>
-            <button class="btn btn-primary">EXECUTAR</button>
-            <br><br>
-            Descriptografar:
-            <div class="form-group">
-                <label for="permutacao_descritografar">Texto Criptografado</label>
-                <input type="email" class="form-control" id="permutacao_descritografar">
-            </div>
-            <div class="form-group">
-                <label for="p_menos_um">P - 1</label>
-                <input type="text" class="form-control" id="p_menos_um">
-            </div>
-            <button class="btn btn-primary">EXECUTAR</button>
-        </div>
-        <div class="tab-pane fade show" id="permutacao_reversa" role="tabpanel" aria-labelledby="permutacao_reversa_tab">
-                Inverter Permutação:
-                <div class="form-group">
-                    <label for="permutacao_critografar">P Original</label>
-                    <input type="text" class="form-control" id="permutacao_critografar">
-                </div>
-                <button class="btn btn-primary">EXECUTAR</button>
+            <button class="btn btn-primary"  onclick="permutacao($('#permutacao_critografar').val(), 'result_permutacao', $('#p').val())">EXECUTAR</button>
+            <span id="result_permutacao"></span>
         </div>
         <div class="tab-pane fade show" id="trasposicao" role="tabpanel" aria-labelledby="trasposicao_tab">
                 Criptografar:
@@ -97,14 +88,24 @@
                     <label for="trasposicao_critografar">Texto Original</label>
                     <input type="text" class="form-control" id="trasposicao_critografar">
                 </div>
-                <button class="btn btn-primary">EXECUTAR</button>
+                <div class="form-group">
+                    <label for="trasposicao_critografar_chave">Chave</label>
+                    <input type="text" class="form-control" id="trasposicao_critografar_chave">
+                </div>
+                <button class="btn btn-primary" onclick="transposicaoIndo($('#trasposicao_critografar').val(), 'result_transposicao_indo', $('#trasposicao_critografar_chave').val())">EXECUTAR</button>
+                <span id="result_transposicao_indo"></span>
                 <br><br>
                 Descriptografar:
                 <div class="form-group">
                     <label for="trasposicao_descriptografar">Texto Criptografado</label>
                     <input type="text" class="form-control" id="trasposicao_descriptografar">
                 </div>
-                <button class="btn btn-primary">EXECUTAR</button>
+                <div class="form-group">
+                    <label for="trasposicao_critografar_chave">Chave</label>
+                    <input type="text" class="form-control" id="trasposicao_descritografar_chave">
+                </div>
+                <button class="btn btn-primary" onclick="transposicaoVindo($('#trasposicao_descriptografar').val(), 'result_transposicao_vindo', $('#trasposicao_descritografar_chave').val())">EXECUTAR</button>
+                <span id="result_transposicao_vindo"></span>
         </div>
         <div class="tab-pane fade show" id="hash" role="tabpanel" aria-labelledby="hash_tab">
                 Criptografar:
