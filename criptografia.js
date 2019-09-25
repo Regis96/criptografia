@@ -114,6 +114,32 @@ function getHash(texto, idDecimal, idBinario, idOctal, idHexadecimal){
      $('#' + idHexadecimal).text('Hexadecimal: ' + result.toString(16));
 }
 
+function aplicarCongruencia(texto, chave, idResultado){
+    var textoAscii = getTextoAsUnicode(texto);
+    var regex = /(-*)(\d+)x(\+|-)(\d+)/gi;
+    var match = regex.exec(chave);
+
+    var sum = parseInt(match[2])
+    var add = parseInt(match[[4]])
+
+    if(match[1] == '-'){
+        sum *= -1;
+    }
+    if(match[3] == '-'){
+        add *= -1;
+    }
+
+    var result = [];
+
+    for(var i = 0; i < textoAscii.length; i++){
+        var temp = sum * textoAscii[i] + add;
+        result.push(temp)
+    }
+
+    var textoFinal = getTextoFromUnicodeArray(result);
+    $('#' + idResultado).text(textoFinal);
+}
+
 function getTextoAsUnicode(texto) {
     result = [];
     var text = texto.replace(/ /g, '').toUpperCase();
@@ -130,14 +156,20 @@ function getTextoFromUnicodeArray(unicodeArray) {
 
     for (num of unicodeArray) {
         var result = num + 64;
-        if(result < 65){
-            result += 26;
-        }
-        if(result > 90){
-            result -= 26
-        }
+        result = padNumToAscii(num);
         textoFinal += String.fromCharCode(result);
     }
 
     return textoFinal.toUpperCase();
+}
+
+function padNumToAscii(num){
+    while(num < 65){
+        num += 26;
+    }
+    while(num > 90){
+        num -= 26
+    }
+
+    return num;
 }

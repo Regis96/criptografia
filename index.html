@@ -49,7 +49,8 @@
                 <label for="dp_cesar_critografar">Texto Original</label>
                 <input type="text" class="form-control" id="dp_cesar_critografar">
             </div>
-            <button class="btn btn-primary" onclick="dpcIndo($('#dp_cesar_critografar').val(), 'result_cesar')">EXECUTAR</button>
+            <button class="btn btn-primary"
+                onclick="dpcIndo($('#dp_cesar_critografar').val(), 'result_cesar')">EXECUTAR</button>
             <span id="result_cesar"></span>
             <br><br>
             Descriptografar:
@@ -57,17 +58,20 @@
                 <label for="dp_cesar_descritografar">Texto Criptografado</label>
                 <input type="email" class="form-control" id="dp_cesar_descritografar">
             </div>
-            <button class="btn btn-primary" onclick="dpcVoltando($('#dp_cesar_descritografar').val(), 'result_cesar_reverso')">EXECUTAR</button>
+            <button class="btn btn-primary"
+                onclick="dpcVoltando($('#dp_cesar_descritografar').val(), 'result_cesar_reverso')">EXECUTAR</button>
             <span id="result_cesar_reverso"></span>
         </div>
-        <div class="tab-pane fade show" id="permutacao_reversa" role="tabpanel" aria-labelledby="permutacao_reversa_tab">
-                Inverter Chave:
-                <div class="form-group">
-                    <label for="permutacao_critografar">P Original(separar números por espaço)</label>
-                    <input type="text" class="form-control" id="permutacao_critografar_p">
-                </div>
-                <button class="btn btn-primary" onclick="inverterChavePermutacao($('#permutacao_critografar_p').val(), 'result_inverter_chave_permutacao')">EXECUTAR</button>
-                <span id="result_inverter_chave_permutacao"></span>
+        <div class="tab-pane fade show" id="permutacao_reversa" role="tabpanel"
+            aria-labelledby="permutacao_reversa_tab">
+            Inverter Chave:
+            <div class="form-group">
+                <label for="permutacao_critografar">P Original(separar números por espaço)</label>
+                <input type="text" class="form-control" id="permutacao_critografar_p">
+            </div>
+            <button class="btn btn-primary"
+                onclick="inverterChavePermutacao($('#permutacao_critografar_p').val(), 'result_inverter_chave_permutacao')">EXECUTAR</button>
+            <span id="result_inverter_chave_permutacao"></span>
         </div>
         <div class="tab-pane fade show" id="permutacao" role="tabpanel" aria-labelledby="permutacao_tab">
             Aplicar Permutação:
@@ -79,80 +83,77 @@
                 <label for="p">P(separar números por espaço)</label>
                 <input type="text" class="form-control" id="p">
             </div>
-            <button class="btn btn-primary"  onclick="permutacao($('#permutacao_critografar').val(), 'result_permutacao', $('#p').val())">EXECUTAR</button>
+            <button class="btn btn-primary"
+                onclick="permutacao($('#permutacao_critografar').val(), 'result_permutacao', $('#p').val())">EXECUTAR</button>
             <span id="result_permutacao"></span>
         </div>
         <div class="tab-pane fade show" id="trasposicao" role="tabpanel" aria-labelledby="trasposicao_tab">
-                Criptografar:
-                <div class="form-group">
-                    <label for="trasposicao_critografar">Texto Original</label>
-                    <input type="text" class="form-control" id="trasposicao_critografar">
-                </div>
-                <div class="form-group">
-                    <label for="trasposicao_critografar_chave">Chave</label>
-                    <input type="text" class="form-control" id="trasposicao_critografar_chave">
-                </div>
-                <button class="btn btn-primary" onclick="transposicaoIndo($('#trasposicao_critografar').val(), 'result_transposicao_indo', $('#trasposicao_critografar_chave').val())">EXECUTAR</button>
-                <span id="result_transposicao_indo"></span>
-                <br><br>
-                Descriptografar: 
-                <div class="form-group">
-                    <label for="trasposicao_descriptografar">Texto Criptografado</label>
-                    <input type="text" class="form-control" id="trasposicao_descriptografar">
-                </div>
-                <div class="form-group">
-                    <label for="trasposicao_critografar_chave">Chave</label>
-                    <input type="text" class="form-control" id="trasposicao_descritografar_chave">
-                </div>
-                <button class="btn btn-primary" onclick="transposicaoVindo($('#trasposicao_descriptografar').val(), 'result_transposicao_vindo', $('#trasposicao_descritografar_chave').val())">EXECUTAR</button>
-                <span id="result_transposicao_vindo"></span>
+            Criptografar:
+            <div class="form-group">
+                <label for="trasposicao_critografar">Texto Original</label>
+                <input type="text" class="form-control" id="trasposicao_critografar">
+            </div>
+            <div class="form-group">
+                <label for="trasposicao_critografar_chave">Chave</label>
+                <input type="text" class="form-control" id="trasposicao_critografar_chave">
+            </div>
+            <button class="btn btn-primary"
+                onclick="transposicaoIndo($('#trasposicao_critografar').val(), 'result_transposicao_indo', $('#trasposicao_critografar_chave').val())">EXECUTAR</button>
+            <span id="result_transposicao_indo"></span>
+            <br><br>
+            Descriptografar:
+            <div class="form-group">
+                <label for="trasposicao_descriptografar">Texto Criptografado</label>
+                <input type="text" class="form-control" id="trasposicao_descriptografar">
+            </div>
+            <div class="form-group">
+                <label for="trasposicao_critografar_chave">Chave</label>
+                <input type="text" class="form-control" id="trasposicao_descritografar_chave">
+            </div>
+            <button class="btn btn-primary"
+                onclick="transposicaoVindo($('#trasposicao_descriptografar').val(), 'result_transposicao_vindo', $('#trasposicao_descritografar_chave').val())">EXECUTAR</button>
+            <span id="result_transposicao_vindo"></span>
         </div>
         <div class="tab-pane fade show" id="hash" role="tabpanel" aria-labelledby="hash_tab">
-                Criptografar:
-                <div class="form-group">
-                    <label for="hash_critografar">Texto Original</label>
-                    <input type="text" class="form-control" id="hash_critografar">
-                </div>
-                <button class="btn btn-primary" onclick="getHash($('#hash_critografar').val(), 'result_hash_decimal', 'result_hash_binario', 'result_hash_octal', 'result_hash_hexadecimal')">EXECUTAR</button>
-                <br>
-                <span id="result_hash_decimal"></span><br>
-                <span id="result_hash_binario"></span><br>
-                <span id="result_hash_octal"></span><br>
-                <span id="result_hash_hexadecimal"></span><br>
+            Criptografar:
+            <div class="form-group">
+                <label for="hash_critografar">Texto Original</label>
+                <input type="text" class="form-control" id="hash_critografar">
+            </div>
+            <button class="btn btn-primary"
+                onclick="getHash($('#hash_critografar').val(), 'result_hash_decimal', 'result_hash_binario', 'result_hash_octal', 'result_hash_hexadecimal')">EXECUTAR</button>
+            <br>
+            <span id="result_hash_decimal"></span><br>
+            <span id="result_hash_binario"></span><br>
+            <span id="result_hash_octal"></span><br>
+            <span id="result_hash_hexadecimal"></span><br>
         </div>
         <div class="tab-pane fade show" id="congruencia" role="tabpanel" aria-labelledby="congruencia_tab">
-                Criptografar:
-                <div class="form-group">
-                    <label for="congruencia_critografar">Texto Original</label>
-                    <input type="text" class="form-control" id="congruencia_critografar">
-                </div>
-                <button class="btn btn-primary">EXECUTAR</button>
-                <br><br>
-                Descriptografar:
-                <div class="form-group">
-                    <label for="congruencia_descriptografar">Texto Criptografado</label>
-                    <input type="text" class="form-control" id="congruencia_descriptografar">
-                </div>
-                <button class="btn btn-primary">EXECUTAR</button>
+            <strong>OBS: Formato da chave aceito: = 2x+4 ou -2x+4</strong>
+            Criptografar:
+            <div class="form-group">
+                <label for="congruencia_critografar">Texto Original</label>
+                <input type="text" class="form-control" id="congruencia_critografar">
+            </div>
+            <div class="form-group">
+                <label for="congruencia_critografar_chave">Chave:</label>
+                <input type="text" class="form-control" id="congruencia_critografar_chave">
+            </div>
+            <button class="btn btn-primary" onclick="aplicarCongruencia($('#congruencia_critografar').val(), $('#congruencia_critografar_chave').val(), 'resultado_congruencia')">EXECUTAR</button>
+            <span id="resultado_congruencia"></span>
+            <br><br>
+            Descriptografar:
+            <div class="form-group">
+                <label for="congruencia_descriptografar">Texto Criptografado</label>
+                <input type="text" class="form-control" id="congruencia_descriptografar">
+            </div>
+            <div class="form-group">
+                <label for="congruencia_descriptografar_chave">Chave:</label>
+                <input type="text" class="form-control" id="congruencia_descriptografar_chave">
+            </div>
+            <button class="btn btn-primary">EXECUTAR</button>
         </div>
     </div>
-    <!-- <form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form> -->
 </body>
 
 </html>
