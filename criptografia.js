@@ -1,4 +1,4 @@
-function dpcIndo(texto, id) {
+function dpcIndo(texto, idResultado) {
     var textoAscii = getTextoAsUnicode(texto);
     var result = [];
 
@@ -8,10 +8,10 @@ function dpcIndo(texto, id) {
 
     textoFinal = getTextoFromUnicodeArray(result);
 
-    $('#' + id).text(textoFinal);
+    $('#' + idResultado).text(textoFinal);
 }
 
-function dpcVoltando(texto, id) {
+function dpcVoltando(texto, idResultado) {
     var textoAscii = getTextoAsUnicode(texto);
     var result = [];
 
@@ -21,10 +21,10 @@ function dpcVoltando(texto, id) {
 
     textoFinal = getTextoFromUnicodeArray(result);
 
-    $('#' + id).text(textoFinal);
+    $('#' + idResultado).text(textoFinal);
 }
 
-function inverterChavePermutacao(p, id){
+function inverterChavePermutacao(p, idResultado){
     var arr = p.split(' ').map(function(item){
         return parseInt(item);
     });
@@ -33,10 +33,10 @@ function inverterChavePermutacao(p, id){
         result[i] = arr.indexOf(i + 1) + 1
     }
 
-    $('#' + id).text(result.join(' '));
+    $('#' + idResultado).text(result.join(' '));
 }
 
-function permutacao(texto, id, p){
+function permutacao(texto, idResultado, p){
     var pArr = p.split(' ').map(function(item){
         return parseInt(item);
     });
@@ -58,10 +58,10 @@ function permutacao(texto, id, p){
 
     textoFinal = getTextoFromUnicodeArray(result);
 
-    $('#' + id).text(textoFinal);
+    $('#' + idResultado).text(textoFinal);
 }
 
-function transposicaoIndo(texto, id, chave){
+function transposicaoIndo(texto, idResultado, chave){
     var textoAscii = getTextoAsUnicode(texto);
     var chaveInt = parseInt(chave);
     var quociente = textoAscii.length / chaveInt;
@@ -81,10 +81,10 @@ function transposicaoIndo(texto, id, chave){
 
     result = [].concat.apply([],arraysParciais);
     var textoFinal = getTextoFromUnicodeArray(result);
-    $('#' + id).text(textoFinal);
+    $('#' + idResultado).text(textoFinal);
 }
 
-function transposicaoVindo(texto, id, chave){
+function transposicaoVindo(texto, idResultado, chave){
     var textoAscii = getTextoAsUnicode(texto);
     var chaveInt = parseInt(chave);
     var quociente = textoAscii.length / chaveInt;
@@ -97,7 +97,21 @@ function transposicaoVindo(texto, id, chave){
     }
 
     var textoFinal = getTextoFromUnicodeArray(result);
-    $('#' + id).text(textoFinal);
+    $('#' + idResultado).text(textoFinal);
+}
+
+function getHash(texto, idDecimal, idBinario, idOctal, idHexadecimal){
+    var textoAscii = getTextoAsUnicode(texto);
+    var result = textoAscii[0];
+
+    for(var i = 1; i < textoAscii.length; i++){
+        result = result ^ textoAscii[i];
+    }
+
+     $('#' + idDecimal).text('Decimal: ' + result);
+     $('#' + idBinario).text('Binário: ' + result.toString(2));
+     $('#' + idOctal).text('Octal: ' + result.toString(8));
+     $('#' + idHexadecimal).text('Hexadecimal: ' + result.toString(16));
 }
 
 function getTextoAsUnicode(texto) {

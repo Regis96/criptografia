@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Olá mundo</title>
+    <title>Segurança da Informação</title>
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="./vendor/bootstrap.min.css">
@@ -113,14 +113,12 @@
                     <label for="hash_critografar">Texto Original</label>
                     <input type="text" class="form-control" id="hash_critografar">
                 </div>
-                <button class="btn btn-primary">EXECUTAR</button>
-                <br><br>
-                Descriptografar:
-                <div class="form-group">
-                    <label for="hash_descriptografar">Texto Criptografado</label>
-                    <input type="text" class="form-control" id="hash_descriptografar">
-                </div>
-                <button class="btn btn-primary">EXECUTAR</button>
+                <button class="btn btn-primary" onclick="getHash($('#hash_critografar').val(), 'result_hash_decimal', 'result_hash_binario', 'result_hash_octal', 'result_hash_hexadecimal')">EXECUTAR</button>
+                <br>
+                <span id="result_hash_decimal"></span><br>
+                <span id="result_hash_binario"></span><br>
+                <span id="result_hash_octal"></span><br>
+                <span id="result_hash_hexadecimal"></span><br>
         </div>
         <div class="tab-pane fade show" id="congruencia" role="tabpanel" aria-labelledby="congruencia_tab">
                 Criptografar:
