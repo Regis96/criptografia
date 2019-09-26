@@ -140,6 +140,52 @@ function aplicarCongruencia(texto, chave, idResultado){
     $('#' + idResultado).text(textoFinal);
 }
 
+function congruenciaVoltando(texto, chave, idResultado){
+    var textoAscii = getTextoAsUnicode(texto);
+    var regex = /(-*)(\d+)x(\+|-)(\d+)/gi;
+    var match = regex.exec(chave);
+
+    var sum = parseInt(match[2])
+    var add = parseInt(match[[4]])
+
+    if(match[1] == '-'){
+        sum *= -1;
+    }
+    if(match[3] == '-'){
+        add *= -1;
+    }
+
+    var result = [];
+
+    // letras = []
+    // for num in nums:
+    //     i = 1
+    //     while True:
+    //         if (num - 4 + i * 26) % -5 == 0:
+    //             result = (num - 4 + i * 26) / -5
+    //             while result < 0:
+    //                 result += 26
+    //             letras.append(result)
+    //             break
+    //         i +=1
+    for(var i = 0; i < textoAscii.length; i++){
+        var i2 = 1;
+
+        while(true){
+            if((textoAscii[i] - add + i2 * 26) % sum == 0){
+                var temp = (textoAscii[i] - add + i2 * 26) / sum;
+                result.push(temp);
+                break;
+            }
+
+            i2 += 1;
+        }
+    }
+
+    var textoFinal = getTextoFromUnicodeArray(result);
+    $('#' + idResultado).text(textoFinal);
+}
+
 function getTextoAsUnicode(texto) {
     var result = [];
     var text = texto.replace(/ /g, '').toUpperCase();

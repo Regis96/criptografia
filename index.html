@@ -129,7 +129,7 @@
             <span id="result_hash_hexadecimal"></span><br>
         </div>
         <div class="tab-pane fade show" id="congruencia" role="tabpanel" aria-labelledby="congruencia_tab">
-            <strong>OBS: Formato da chave aceito: = 2x+4 ou -2x+4</strong>
+            <strong>OBS: Formato da chave aceito: = 2x+4 ou -2x+4</strong><br>
             Criptografar:
             <div class="form-group">
                 <label for="congruencia_critografar">Texto Original</label>
@@ -151,7 +151,8 @@
                 <label for="congruencia_descriptografar_chave">Chave:</label>
                 <input type="text" class="form-control" id="congruencia_descriptografar_chave">
             </div>
-            <button class="btn btn-primary">EXECUTAR</button>
+            <button class="btn btn-primary" onclick="congruenciaVoltando($('#congruencia_descriptografar').val(),$('#congruencia_descriptografar_chave').val(), 'resultado_congruencia_voltando')">EXECUTAR</button>
+            <span id="resultado_congruencia_voltando"></span>
         </div>
     </div>
 </body>
