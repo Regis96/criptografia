@@ -6,7 +6,7 @@ function dpcIndo(texto, idResultado) {
         result.push(textoAscii[i] + 3);
     }
 
-    textoFinal = getTextoFromUnicodeArray(result);
+    var textoFinal = getTextoFromUnicodeArray(result);
 
     $('#' + idResultado).text(textoFinal);
 }
@@ -141,7 +141,7 @@ function aplicarCongruencia(texto, chave, idResultado){
 }
 
 function getTextoAsUnicode(texto) {
-    result = [];
+    var result = [];
     var text = texto.replace(/ /g, '').toUpperCase();
 
     for (var i = 0; i < text.length; i++) {
@@ -156,7 +156,7 @@ function getTextoFromUnicodeArray(unicodeArray) {
 
     for (num of unicodeArray) {
         var result = num + 64;
-        result = padNumToAscii(num);
+        result = padNumToAscii(result);
         textoFinal += String.fromCharCode(result);
     }
 
